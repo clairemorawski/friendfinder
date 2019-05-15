@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Pacifico');
+
+body{
+	font-family: 'Oswald', sans-serif;
+	font-size: 25px;
+}
+
+header{
+	margin-bottom: 20px;
+
+}
+
+.btn-primary,.reset{
+	background-color: #313477;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-size: 30px;
+	padding: 20px;
+	margin-top: 100px;
+}
+.btn-primary:hover, .reset:hover{
+	background-color: #202364;
+}
+
+.container{
+	margin-top: 50px;
+	text-align: center;
+	height: 100%;
+	width: 700px;
+}
+
+h2, #message, #finalMessage{
+	font-family: Replica-Bold;
+}
+
+.thisChoice:hover{
+	background-color: #202364;
+	color: white;
+	padding: 10px;
+}
+
+nav ul a {
+    transition: background-color .3s;
+    font-size: 2.1rem;
+    color: #fff;
+    display: block;
+    padding: 0 15px;
+	cursor: pointer;
+	font-family: 'Oswald', sans-serif, bold;
+}
+nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 2.1rem;
+    padding: 0;
+    white-space: nowrap;
+    font-family: 'Pacifico', cursive, bold;
+}
+h1 {
+    font-size: 4.2rem;
+    line-height: 110%;
+    margin: 2.1rem 0 1.68rem 0;
+    font-family: 'Pacifico', cursive, bold;
+}
+h2, #message, #finalMessage {
+    font-family: 'Oswald', sans-serif, bold;
+}
+.btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+}
+h5 {
+    font-weight: 400;
+    line-height: 1.1;
+	font-family: 'Pacifico', cursive;
+	color: #fff;
+}
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: center;
+    z-index: 1;
+	transition: .3s ease-out;
+	background-color: #1565C0;
+	margin: center;
+}
+p {
+	margin: 12.3px 0px 9.84px;
+	color: #fff;
+}
+a {
+	font-weight: 400;
+    line-height: 1.1;
+	margin: 12.3px 0px 9.84px;
+	font-family: 'Oswald', sans-serif;
+	padding: 0px 11.25px;
+	color: #fff;
+}
+h3 {
+	font-family: 'Oswald', sans-serif;
+	font-display: bold;
+}
