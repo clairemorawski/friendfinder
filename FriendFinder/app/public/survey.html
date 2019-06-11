@@ -20,15 +20,16 @@
 </head>
 
 <body>
+    <!--navbar-->
     <header>
         <nav>
             <div class="nav-wrapper blue darken-3">
-                <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                <i class="fa fa-address-book-o fa-1x" aria-hidden="true" id=logo-icon></i>
                 <a href="../public/home.html" class="brand-logo" id="logo">Friend Finder</a>
                 <ul class="right hide-on-med-and-down" id="head-nav-links">
-                    <li><a href="../public/survey.html">Survey</a></li>
-                    <li><a href="../data/friends.js">API Friends List</a></li>
-                    <li><a href="https://github.com/clairemorawski/friendfinder.git">GitHub Repository</a></li>
+                    <li><a href="../public/survey.html" class="yellow-text">Survey</a></li>
+                    <li><a href="../data/friends.js" class="yellow-text">API Friends List</a></li>
+                    <li><a href="https://www.fox.com/new-girl/" class="yellow-text">Watch FOX's "New Girl"</a></li>
                 </ul>
             </div>
         </nav>
@@ -39,7 +40,7 @@
             <div class="row">
                 <div class="col s12 z-depth-5 mainpanel">
                     <div id="mainpanel-content">
-                        <h1>Survey Questions</h1>
+                        <h1 class="dark yellow-text">Survey Questions</h1>
                         <div class="divider"></div>
                         <h3>About You</h3>
 
@@ -55,11 +56,11 @@
                             <h4>You do not mind being the center of attention.</h4>
                             <select id="question1">
                                 <option value="" disabled selected>Choose your option</option>
-                                <option value="1">1 (Strongly Disagree)</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5 (Strongly Agree)</option>
+                                <option value="1" class="blue darken-3">1 (Strongly Disagree)</option>
+                                <option value="2" class="blue darken-3">2</option>
+                                <option value="3" class="blue darken-3">3</option>
+                                <option value="4" class="blue darken-3">4</option>
+                                <option value="5" class="blue darken-3">5 (Strongly Agree)</option>
                             </select>
                         </div>
 
@@ -186,7 +187,8 @@
 
                         <!-- Survey Submit Button -->
                         <div>
-                            <button class="btn waves-effect waves-light" type="submit" name="action" id="submitButton">
+                            <button class="btn waves-effect blue darken-3 waves-light" type="submit" name="action"
+                                id="submitButton">
                                 <i class="material-icons right">Submit Response</i>
                             </button>
                         </div>
@@ -200,16 +202,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
-                        <h5 class="white-text">Friend Finder</h5>
-                        <p class="grey-text text-lighten-4">Thank you for taking the survey!</p>
+                        <h5 class="yellow-text">Friend Finder</h5>
+                        <p class="yellow-text">Thank you for taking the survey!</p>
                     </div>
 
                     <div class="col l6 s12">
-                        <h5 class="white-text"></h5>
+                        <h5 class="yellow-text"></h5>
                         <ul>
-                            <p><a class="grey-text text-lighten-3" href="../data/friends.js">API Friends List</a></p>
-                            <p><a class="grey-text text-lighten-3"
-                                    href="https://github.com/clairemorawski/friendfinder.git">GitHub Repo</a></p>
+                            <p><a class="yellow-text" href="../data/friends.js">API Friends List</a></p>
+                            <p><a class="yellow-text" href="https://www.fox.com/new-girl/">Watch FOX's
+                                    "New
+                                    Girl"</a></p>
                         </ul>
                     </div>
                 </div>

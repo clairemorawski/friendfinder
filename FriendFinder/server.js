@@ -22,4 +22,11 @@ require(path.join('./app/routing/htmlRoutes'))(app);
 //Listener app
 app.listen(PORT, function () {
     console.log('Friend Finder App is listening on PORT: ' + PORT);
+
+    // //Listener for Materialize's "Select" element:
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     var elems = document.querySelectorAll('select');
+    //     var instances = M.FormSelect.init(elems, options);
+    // });
 });
+

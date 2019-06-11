@@ -7,7 +7,6 @@ body{
 
 header{
 	margin-bottom: 20px;
-
 }
 
 .btn-primary,.reset{
@@ -50,7 +49,7 @@ nav ul a {
 }
 nav .brand-logo {
     position: absolute;
-    color: #fff;
+    color: #ffeb3b;
     display: inline-block;
     font-size: 2.1rem;
     padding: 0;
@@ -73,7 +72,7 @@ h2, #message, #finalMessage {
 h5 {
     font-weight: 400;
     line-height: 1.1;
-	font-family: 'Pacifico', cursive;
+	font-family: 'Pacifico', cursive, bold;
 	color: #fff;
 }
 .waves-effect {
@@ -107,4 +106,29 @@ a {
 h3 {
 	font-family: 'Oswald', sans-serif;
 	font-display: bold;
+}
+i {
+	color: #ffeb3b;
+	vertical-align: left;
+}
+.input-field label {
+	color: #1565C0;
+}
+.input-field input[type=text]:focus + label {
+color: #1565C0;
+}
+.input-field input[type=text]:focus {
+	border-bottom: 1px solid #1565C0;
+	box-shadow: 0 1px 0 0 #1565C0;
+}
+.input-field input[type=text]:valid {
+	border-bottom: 1px solid #1565C0;
+	box-shadow: 0 1px 0 0 #1565C0;
+}
+.input-field input[type=text]:invalid {
+	border-bottom: 1px solid #1565C0;
+	box-shadow: 0 1px 0 0 #1565C0;
+}
+.input-field .prefix.active {
+	color: #1565C0;
 }
