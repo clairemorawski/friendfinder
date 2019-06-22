@@ -2,6 +2,9 @@
 //A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
 //A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
 
+//dependencies
+var path = require('path');
+
 //Import Friend Data
 var friends = require('../data/friends');
 
@@ -14,7 +17,6 @@ module.exports = function (app) {
 
     //Post Route: Add new friend entry
     app.post('/api/friends', function (req, res) {
-
         //Require incoming data through req.body and store each element in unique variables
         var newFriend = req.body;
         var name = newFriend.name;
@@ -35,16 +37,15 @@ module.exports = function (app) {
         };
 
         //Send back elements to our requested data
-        var randomFriend = tableData[Math.floor(Math.random() * tableData.length)];
+        var randomFriend = friends[Math.floor(Math.random() * friends.length)];
 
         //Push new object into our exisiting TableData
-        tableData.push(newFriendObject);
+        friends.push(newFriendObject);
 
         //Send back data to the front-end, based on the chosen data in 
         res.json(randomFriend);
     });
 };
-
 
 //         console.log(req.body.scores);
 //         var user = req.body;

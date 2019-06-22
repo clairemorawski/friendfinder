@@ -1,4 +1,3 @@
-//Save application's data as an array of objects.
 var friends = [
     {
         name: "Jessica Day",

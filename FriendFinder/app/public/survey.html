@@ -13,8 +13,6 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico" rel="stylesheet">
     <!-- Compiled and minified Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-    <!-- Compiled and minified Materialize JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <!-- Link to style sheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -27,7 +25,7 @@
                 <i class="fa fa-address-book-o fa-1x" aria-hidden="true" id=logo-icon></i>
                 <a href="../public/home.html" class="brand-logo" id="logo">Friend Finder</a>
                 <ul class="right hide-on-med-and-down" id="head-nav-links">
-                    <li><a href="../public/survey.html" class="yellow-text">Survey</a></li>
+                    <li><a href="../public/survey.html" class="yellow-text">Home</a></li>
                     <li><a href="../data/friends.js" class="yellow-text">API Friends List</a></li>
                     <li><a href="https://www.fox.com/new-girl/" class="yellow-text">Watch FOX's "New Girl"</a></li>
                 </ul>
@@ -50,17 +48,23 @@
                             <input type="text" class="validate" placeholder="Your Name Here" id="userName">
                         </div>
 
+                        <div class="input-field col s12">
+                            <h5>Photo (Required)</h5>
+                            <!-- <i class="material-icons prefix">account_circle</i> -->
+                            <input type="text" class="validate" placeholder="Link Your Photo Here" id="userPhoto">
+                        </div>
+
                         <!-- Survey Questions -->
                         <div class="input-field col s12">
                             <h3>Question 1</h3>
                             <h4>You do not mind being the center of attention.</h4>
                             <select id="question1">
                                 <option value="" disabled selected>Choose your option</option>
-                                <option value="1" class="blue darken-3">1 (Strongly Disagree)</option>
-                                <option value="2" class="blue darken-3">2</option>
-                                <option value="3" class="blue darken-3">3</option>
-                                <option value="4" class="blue darken-3">4</option>
-                                <option value="5" class="blue darken-3">5 (Strongly Agree)</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
                             </select>
                         </div>
 
@@ -233,20 +237,21 @@
                     class="modal-action modal-close waves-effect waves-dark blue btn-flat">Please complete!</a>
             </div>
         </div>
-
+        <!-- Compiled and minified Materialize JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
         <script type="text/javascript">
-
-            $(document).ready(function () {
-                $('select').material_select();
-                $('.modal').modal({
-                    dismissible: false, // Modal can be dismissed by clicking outside of the modal
-                    opacity: .5, // Opacity of modal background
-                    inDuration: 300, // Transition in duration
-                    outDuration: 200, // Transition out duration
-                    startingTop: '4%', // Starting top style attribute
-                    endingTop: '10%' // Ending top style attribute
-                });
-            });
+            $('select').material_select();
+            // $(document).ready(function () {
+            //     $('select').material_select();
+            //     $('.modal').modal({
+            //         dismissible: false, // Modal can be dismissed by clicking outside of the modal
+            //         opacity: .5, // Opacity of modal background
+            //         inDuration: 300, // Transition in duration
+            //         outDuration: 200, // Transition out duration
+            //         startingTop: '4%', // Starting top style attribute
+            //         endingTop: '10%' // Ending top style attribute
+            //     });
+            // });
 
             // Activate submit button
             $('#submitButton').on('click', function (event) {
@@ -261,6 +266,7 @@
                 }
 
                 if (valid === true) {
+                    console.log("valid");
                     var newUser = {
                         name: $("#userName").val().trim(),
                         photo: $("#userPhoto").val().trim(),
@@ -276,19 +282,21 @@
                             $("#question9").val(),
                             $("#question10").val()
                         ]
+                        // console.log("if i see this, it is working");
                     };
-                    var currentURL = window.location.origin;
+                    console.log(newUser);
+                    //console.log('its working);
+
+
+                    //var currentURL = window.location.origin;
+
 
                     // Add user inputs to friends list
-                    $.post(currentURL + "/api/friends", newUser, function (data) {
+                    $.post("/api/friends", newUser).then(function (data) {
+                        console.log(data);
+                        alert('Your best match is ' + data.name);
+                    })
 
-                        // Set the name and image values of friend match
-                        $('#userMatch').html(data.matchName);
-                        $("#userMatchImage").attr("src", data.matchImage);
-
-                        // Pop open the modal dialog
-                        $('#modal1').modal('toggle');
-                    });
                 } else {
                     // If a required field is missing, show alert
                     alert("Survey is incomplete!");
